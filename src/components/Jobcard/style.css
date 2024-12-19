@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+
+.job-card-conatiner{
+  
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin:0;
+   
+}
+.job-card {
+    background-color: #302e2e;
+    padding: 0 auto;
+    border-radius: 8px;
+    color: white;
+     margin: 0;
+    position: relative;
+    
+}
+.job-card-list{
+    background-color: #302e2e;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+.job-card-detail {
+   background-color: transparent;
+    padding-right: 10px;
+    margin: 0 ;
+   box-shadow: none;
+  
+}
+.job-card-detail .job-description h1{
+    font-size: 18px;
+   
+}
+.job-card-detail p{
+    font-size: 15px;
+}
+.job-card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* margin-bottom: 20px; */
+}
+
+.company-logo {
+    width: 40px;
+    height: 50px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.job-rating {
+    margin-top: 0px;
+    margin-right: 14px;
+    text-align: justify;
+}
+
+.job-rating h1 {
+    font-size: 15px;
+    margin:2px 0px;
+    color: #ffffff;
+    margin-bottom: 0px;
+
+}
+.star-icon {
+    color: #f1c40f;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+span {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 100px;
+    margin-top:0px;
+
+}
+ .job-card-detail .job-rating  h1{
+    margin-bottom: 10px;
+    font-size: 18px;;
+  
+ }
+ .job-card-detail .job-rating  span  {
+     margin-bottom: 10px;
+     font-size: 18px;
+}
+.job-card-detail .star-icon{
+    font-size: 16px;
+}
+
+.job-card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:10px;
+    
+}
+
+.job-details {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+   
+  }
+
+.job-detail {
+    font-size: 10px;
+    color: #e4dddd;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight: 100;
+    
+}
+.job-similar{
+    font-size: 13px;
+     line-height: 1.5;
+    color:white;
+    font-weight: 800;
+    padding-right: 10px;
+}
+.job-similar .icon{
+    font-size: 13px;
+    margin-right: 10px;
+}
+.job-package {
+    font-size: 10px;
+    font-weight: 500;
+    color: #ffffff;
+   
+}
+
+.icon {
+    margin-right: 2px;
+    color: #ffffff;
+    font-size: 10px;
+   
+}
+
+.job-description {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-family: "roboto";
+    line-height: 1.5;
+    text-decoration: none;
+    color: #ffffff;
+    margin-bottom: 10px;
+    align-items: stretch;
+    width: 100%;
+}
+
+.job-description h1 {
+    font-size: 10px;
+    color: #ffffff;
+    font-family: "roboto";
+    font-weight: 700;
+  
+}
+
+.job-description-para {
+    font-size: 10px;
+    line-height: 1.5;
+    color: #dfd9d9;
+    font-family: "roboto";
+    font-weight: 100;
+    text-align: justify;
+}
+
+.job-line {
+    height: 2px;
+    background-color: #475569;
+    margin-top: 4px;
+    max-width: 100%;
+    opacity: 0.9;
+
+}
+.job-visit{
+    color: #7173f3;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: "roboto";
+    margin-top: 10px;
+   
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.visit-icon{
+    font-size: 14px;
+    margin-left: 8px;
+    font-weight: 100;
+    color: #4f52e2 ;
+
+
+}
+.job-similar h1{
+    font-size: 16px;
+    text-align: justify;
+  
+}
+.job-similar-para{
+    font-size: 14px;
+    color: #fffdfd;
+   }
+.job-similar h1{
+    font-size: 16px;
+    
+    margin-bottom: 10px;
+}
+.job-similar .star-icon{
+    font-size: 15px;
+}
+.job-similar span{
+    font-size: 18px;
+}
+.job-similar p{
+    font-size: 15px;
+    
+}
+/*extra small devices (phones, 576px and down)*/
+@media screen and (max-width: 576px) {
+    .job-card-conatiner {
+        padding:5px;
+        max-width: 100%;
+        
+}
+
+}
+@media screen and (min-width:760px){
+.company-logo {
+        width: 50px;
+        height: 50px;
+        
+    }
+.job-rating h1 {
+    font-size: 18px;
+    
+}
+.job-detail {
+    font-size: 15px;
+    color: #f7f3f3;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-weight: 300;
+
+}
+.job-package {
+    font-size: 18px;
+    
+
+}
+.job-description h1 {
+    font-size: 18px;
+    
+}
+.job-description-para {
+    font-size: 14px;
+}
+.icon {
+  font-size: 15px;
+  margin-right: 5px;
+
+
+}
+.job-similar h1 {
+    font-size: 15px;
+     margin-bottom: 10px;
+}
+.job-similar .star-icon {
+    font-size: 13px;
+}
+
+.job-similar span {
+    font-size: 15px;
+}
+}
+
+@media screen and (min-width:992px){
+
+ .job-description-para {
+    font-size: 20px;
+ }
+.icon {
+ font-size: 18px;
+ margin-right: 5px;
+ }
+.company-logo {
+ width: 60px;
+ height: 60px;
+        
+ }
+.job-detail {
+ font-size: 15px;
+ color: #f7f3f3;
+ margin-right: 20px;
+ font-weight: 300;
+}
+.job-description-para {
+  font-size: 18px;
+ }
+ .job-rating h1 {
+    font-size: 18px;
+    margin: 2px 0px;
+    color: #ffffff;
+     margin-bottom: 12px;
+        
+ }
+        
+.star-icon {
+ font-size: 15px;
+        
+     }
+        
+span {
+ font-size: 18px;
+}
+
+}
+@media screen and (min-width:1200px){
+.job-card-conatiner {
+      width: 100%;
+        
+        margin: 0;
+
+    }
+    
+
+.icon {
+    font-size: 18px;
+    margin-right: 5px;
+}
+.company-logo {
+    width: 60px;
+    height: 60px;
+
+}
+
+.job-detail {
+    font-size: 15px;
+    color: #f7f3f3;
+    margin-right: 20px;
+    font-weight: 300;
+
+}
+  .job-description-para {
+        font-size:20px;
+    }
+.job-rating h1 {
+    font-size: 20px;
+    margin: 2px 0px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    
+ }
+    
+.star-icon {
+ font-size: 20px;
+
+}
+    
+span {
+    font-size: 24px;
+}
+.job-description h1 {
+     font-size: 24px;
+
+ }
+
+}

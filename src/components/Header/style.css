@@ -1,0 +1,156 @@
+.container{
+    display: flex; 
+    align-items: center;
+    background-color:#272727;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+     z-index: 9999;
+    top:0;
+   
+    
+  
+}
+
+ Link{
+   
+    display: inline;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+} 
+.app-logo{
+    height: 30px;
+    width: 100px;
+    margin-left:10px;
+}
+.header-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   
+    text-decoration: none;
+    color: white;
+}
+.header-button{
+    background-color:#6366f1;
+    color: white;
+    font-size: 12px;
+    width: 150px;
+    height: 30px;
+    margin-right: 40px;
+    border-radius: 5px;
+    border: none;
+    
+}
+.header-link{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+.nav-text{
+    display: block;
+}
+.nav-icon {
+    font-size: 22px;
+    gap: 10px;
+}
+
+
+ @media screen and (max-width: 576px)  {
+  
+    .nav-text {
+        display: none;
+        
+    }
+
+    .nav-icon {
+    font-size: 22px;
+       
+    }
+
+    .container {
+        padding: 8px;
+    }
+
+    .header-items {
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap: 5px;
+        margin-left: 40px;
+       
+    }
+    .header-button{
+       
+        background: transparent;
+        margin-right: 10px;
+        
+    }
+} 
+ @media screen and (min-width: 576px) and (max-width: 760px){
+    .nav-text{
+        display: none;
+    }
+    .nav-icon {
+        display: block;
+        
+    }
+
+   
+    .header-items {
+    
+    gap: 30px;
+  
+    
+         }
+    .header-button {
+     background: transparent;
+        margin-right: 10px;
+   
+    
+    }
+
+ }
+@media screen and (min-width:760px){
+   .container{
+    margin-right: 200px;
+   }
+        .nav-icon {
+            display: none;
+           
+    
+        }
+    .header-items{
+        gap: 30px;
+
+    }
+    .header-button{
+        margin-right: 30px;
+    }
+    .nav-text{
+        
+    font-size: 20px;
+     margin-right: 20px;
+    text-align: center;
+    }
+}
+@media screen and (min-width: 992px){
+    .container{
+        margin-right: 300px;
+    }
+        .nav-icon {
+            display: none;
+    
+    
+        }
+        .nav-text{
+        
+        font-size: 20px;
+        margin-right: 20px;
+                    text-align: center;
+            
+        }
+    
+}
