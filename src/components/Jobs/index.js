@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Cookies from 'js-cookie';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { Navigate } from "react-router-dom";
@@ -49,7 +49,7 @@ const Jobs = () => {
     }, [jwtToken]);
 
     //fetch jobs based on fillters
-    const fetchJObs = async () => {
+    const fetchJObs = useCallback(async () => {
         setIsLoading(true);
 
         const employmentTypeString = employementType.join(",");
@@ -83,7 +83,7 @@ const Jobs = () => {
             setIsLoading(false);
         }
 
-    };
+    }, [jwtToken, employementType, salaryRange]);
     // Fetch jobs when component mounts
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
@@ -91,7 +91,7 @@ const Jobs = () => {
             fetchJObs();//fetch jobs whenever filters change
         }
 
-    }, [jwtToken],);
+    }, [jwtToken, fetchJObs]);
 
 
     useEffect(() => {
