@@ -85,6 +85,7 @@ const Jobs = () => {
 
     };
     // Fetch jobs when component mounts
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (jwtToken) {
             fetchJObs();//fetch jobs whenever filters change
