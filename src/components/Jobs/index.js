@@ -90,7 +90,7 @@ const Jobs = () => {
             fetchJObs();//fetch jobs whenever filters change
         }
 
-    }, [jwtToken], fetchJObs);
+    }, [jwtToken],);
 
 
     useEffect(() => {
