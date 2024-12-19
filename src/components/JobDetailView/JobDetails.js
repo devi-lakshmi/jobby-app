@@ -10,7 +10,7 @@ const JobDetails = () => {
     const [jobDetails, setJobDetails] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
-    const noJobsFound = jobDetails === null;
+
 
 
     useEffect(() => {
