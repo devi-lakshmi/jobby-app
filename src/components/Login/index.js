@@ -1,7 +1,7 @@
 // import React from 'react'
 import { useState, useEffect } from 'react';
 
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
 import './style.css';
 
@@ -19,55 +19,61 @@ const Login = () => {
 
     const [errorMessage, setErrorMessage] = useState(null);
 
-    const [isAutoLoginAttempted, setIsAutoLoginAttempted] = useState(false);
+    // // eslint-disable-next-line no-unused-vars
+    // const [isLoginSuccess, setIsLoginSuccess] = useState(false);
+
+    // const [isAutoLoginAttempted, setIsAutoLoginAttempted] = useState(false);
     const { username, password } = form;
     const jwtToken = Cookies.get("jwt_token");
+    console.log("jwtToken", jwtToken)
 
-    useEffect(() => {
-        const autoLogin = async () => {
+    // useEffect(() => {
+    //     const autoLogin = async () => {
+    //         if (jwtToken !== undefined) {
+    //             navigate("/");
+    //             return; // Prevent further execution
+    //         }
+    //         console.log("Attempting automatic login...");
+    //         const username = "rahul";
+    //         const password = "rahul@2021";
 
-            if (jwtToken !== undefined) {
-                return <Navigate to="/" />;
-            }
+    //         try {
+    //             const url = "https://apis.ccbp.in/login";
+    //             const options = {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //                 body: JSON.stringify({ username, password }),
+    //             };
 
-            const username = process.env.REACT_APP_API_USERNAME;
-            const password = process.env.REACT_APP_API_PASSWORD;
+    //             const response = await fetch(url, options);
+    //             if (!response.ok) {
+    //                 // Handle non-200 responses
+    //                 const data = await response.json();
+    //                 console.error("Auto-login failed:", data.error_msg || "Unknown error");
+    //                 setErrorMessage(data.error_msg || "Auto-login failed.");
+    //             } else {
+    //                 const data = await response.json();
+    //                 console.log("Auto-login successful:", data);
+    //                 Cookies.set('jwt_token', data.jwt_token, { expires: 30 });
+    //                 navigate("/");
+    //             }
+    //         } catch (error) {
+    //             console.error("Error during auto-login:", error);
+    //             setErrorMessage("Something went wrong during auto-login.");
+    //         }
 
-            if (username && password) {
-                const url = "https://apis.ccbp.in/login";
-                const options = {
-                    method: 'POST',
-                    body: JSON.stringify({ username, password }),
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                };
-                try {
-                    const response = await fetch(url, options);
-                    const data = await response.json();
+    //         setIsAutoLoginAttempted(true); // Ensure this state is updated
+    //     };
 
-                    if (response.ok === true) {
-                        //Store the token in cookies
-                        Cookies.set('jwt_token', data.jwt_token, { expires: 30, sameSite: 'None', secure: true });
-
-                        navigate("/");
-                    }
-                    else {
-                        setErrorMessage(data.error_msg || "Auto-login failed. Please log in manually.");
-                    }
-                } catch (error) {
-                    setErrorMessage('something went wrong');
-                }
-            }
-
-            setIsAutoLoginAttempted(true);
-
-        };
-        autoLogin();
-    }, [navigate, jwtToken]);
+    //     autoLogin();
+    // }, [jwtToken, navigate]);
 
     if (jwtToken !== undefined) {
-        return <Navigate to="/" />;
+        console.log("jwtToken", jwtToken)
+        navigate("/");
+        return;
     }
 
     const handleOnChange = (event) => {
@@ -86,10 +92,8 @@ const Login = () => {
         const options = {
             method: 'POST',
             body: JSON.stringify(form),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
+
+        }
 
         try {
             const response = await fetch(url, options);
@@ -109,45 +113,46 @@ const Login = () => {
 
         <div>
             <div className='login-form-container'>
-                {!isAutoLoginAttempted ? (
+                {/* {!isAutoLoginAttempted ? (
                     <div className="form-login">
                         <p>Attempting to log in automatically...</p>
                     </div>
-                ) : (
-                    <form className='form-login' onSubmit={handleSubmit}>
-                        <div>
-                            <img
-                                className="app-logo"
-                                src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-                                alt="website logo"
-                            />
-                        </div>
-                        <div>
-                            <label className='input-label' htmlFor='username'>USERNAME</label>
-                            <input
-                                type="text"
-                                name="username"
-                                value={form.username}
-                                onChange={handleOnChange}
-                                placeholder="username"
-                                className='input-form'
-                            />
-                        </div>
-                        <div>
-                            <label className='input-label' htmlFor='password'>PASSWORD</label>
-                            <input
-                                type="password"
-                                name="password"
-                                value={form.password}
-                                onChange={handleOnChange}
-                                placeholder="password"
-                                className='input-form'
-                            />
-                        </div>
-                        <button className="login-btn" type="submit">Login</button>
-                        {errorMessage && <p className='errormsg'>{errorMessage}</p>}
-                    </form>
-                )}
+                ) : ( */}
+                <form className='form-login' onSubmit={handleSubmit}>
+                    <div>
+                        <img
+                            className="app-logo"
+                            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+                            alt="website logo"
+                        />
+                    </div>
+                    <div>
+                        <label className='input-label' htmlFor='username'>USERNAME</label>
+                        <input
+                            type="text"
+                            name="username"
+                            value={username}
+                            onChange={handleOnChange}
+                            placeholder="username"
+                            className='input-form'
+                        />
+                    </div>
+                    <div>
+
+                        <label className='input-label' htmlFor='password'>PASSWORD</label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={password}
+                            onChange={handleOnChange}
+                            placeholder="password"
+                            className='input-form'
+                        />
+                    </div>
+                    <button className="login-btn" type="submit">Login</button>
+                    {errorMessage && <p className='errormsg'>{errorMessage}</p>}
+                </form>
+
             </div>
         </div>
     );
