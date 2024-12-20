@@ -48,7 +48,7 @@ const Login = () => {
 
                     if (response.ok === true) {
                         //Store the token in cookies
-                        Cookies.set('jwt_token', data.jwt_token, { expires: 30 });
+                        Cookies.set('jwt_token', data.jwt_token, { expires: 30, sameSite: 'None', secure: true });
 
                         navigate("/");
                     }
@@ -66,6 +66,9 @@ const Login = () => {
         autoLogin();
     }, [navigate, jwtToken]);
 
+    if (jwtToken !== undefined) {
+        return <Navigate to="/" />;
+    }
 
     const handleOnChange = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
