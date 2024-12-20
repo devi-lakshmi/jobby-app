@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import femaleavatar from '../assest/female.jpg';
 import Cookies from 'js-cookie';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { Navigate } from "react-router-dom";
@@ -33,8 +34,14 @@ const Jobs = () => {
                 const response = await fetch(url, options);
                 if (response.ok === true) {
                     const data = await response.json();
+                    const modifiedData = {
+                        ...data.profile_details,
+                        name: "Lakshmi Kanala",
+                        short_bio: "Full Stack Developer",
+                        profile_image_url: femaleavatar,
+                    }
 
-                    setProfileData(data.profile_details);
+                    setProfileData(modifiedData);
 
                 } else {
                     console.error('Error:', response);
@@ -179,6 +186,7 @@ const Jobs = () => {
                         </div>
                         <h3>{profileData.name}</h3>
                         <p>{profileData.short_bio}</p>
+
 
                     </div>
 

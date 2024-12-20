@@ -18,20 +18,14 @@ const Login = () => {
 
 
     const [errorMessage, setErrorMessage] = useState(null);
-    // eslint-disable-next-line no-unused-vars
-    // const [isLoginSuccess, setIsLoginSuccess] = useState(false);
-    // const [isShowPassword, setIsShowPassword] = useState(false);
-    const [isAutoLoginAttempted, setIsAutoLoginAttempted] = useState(false);
 
+    const [isAutoLoginAttempted, setIsAutoLoginAttempted] = useState(false);
     const { username, password } = form;
     const jwtToken = Cookies.get("jwt_token");
-    // if (jwtToken !== undefined) {
-    //     return <Navigate to="/" />;
-    // }
-
 
     useEffect(() => {
         const autoLogin = async () => {
+
             if (jwtToken !== undefined) {
                 return <Navigate to="/" />;
             }
@@ -55,7 +49,7 @@ const Login = () => {
                     if (response.ok === true) {
                         //Store the token in cookies
                         Cookies.set('jwt_token', data.jwt_token, { expires: 30 });
-                        // setIsLoginSuccess(true);
+
                         navigate("/");
                     }
                     else {
@@ -80,6 +74,8 @@ const Login = () => {
     const handleSubmit = async event => {
         event.preventDefault();
         setErrorMessage(null);
+
+
         if (username === "" || password === "") {
             setErrorMessage('*username and password required');
         }
@@ -107,41 +103,7 @@ const Login = () => {
         }
     };
     return (
-        //         <div>
-        //             <div className='login-form-container'>
 
-        //                 <form className='form-login' onSubmit={handleSubmit}>
-        //                     <div>
-        //                         <img className="app-logo" src="https://assets.ccbp.in/frontend/react-js/logo-img.png " alt="website logo" />
-        //                     </div>
-        //                     <div>
-        //                         <label className='input-label' htmlFor='Username'>USERNAME</label>
-        //                         <input type="text"
-        //                             name="username"
-        //                             value={username}
-        //                             onChange={handleOnChange}
-        //                             placeholder="username"
-        //                             className='input-form' />
-        //                     </div>
-        //                     <div>
-        //                         <label className='input-label' htmlFor='Password'>PASSWORD</label>
-        //                         <input
-        //                             type="password"
-        //                             name="password"
-        //                             value={password}
-        //                             onChange={handleOnChange}
-        //                             placeholder="password"
-        //                             className='input-form' />
-        //                     </div>
-        //                     <button className="login-btn" type="submit" >Login</button>
-        //                     {errorMessage && <p className='errormsg'>{errorMessage}</p>}
-        //                 </form>
-        //             </div>
-
-
-        //         </div>
-        //     )
-        // }
         <div>
             <div className='login-form-container'>
                 {!isAutoLoginAttempted ? (
