@@ -25,7 +25,9 @@ You can view the live demo of the website [here](https://jobby-site.netlify.app)
 # Installation
 
 To set up and run the project locally, follow these steps:
-1.Clone the repository: ```bash
+
+1.Clone the repository:
+```bash
 git@github.com:devi-lakshmi/jobby-app.git
 
 2.Navigate to the project directory:cd job-app 
