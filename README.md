@@ -1,12 +1,12 @@
-# jobby-app
+# Jobby-app
 
 This is a React-based job application portal that allows users to browse job listings, view job details, and navigate through the application securely using protected routes.
 
-##Live demo
+## Live demo
 
 You can view the live demo of the website [here](https://jobby-site.netlify.app)
 
-#Features
+# Features
 
 1.User authentication with protected routes.
 
@@ -16,7 +16,7 @@ You can view the live demo of the website [here](https://jobby-site.netlify.app)
 
 4.Custom 404 Not Found page.
 
-#Technologies Used
+## Technologies Used
 - Javascript
 - React.js
 - React Router
@@ -25,7 +25,7 @@ You can view the live demo of the website [here](https://jobby-site.netlify.app)
 #Installation
 To set up and run the project locally, follow these steps:
    
-1.  Clone the repository: ```bash git@github.com:devi-lakshmi/jobby-app.git
+1.Clone the repository: ```bash git@github.com:devi-lakshmi/jobby-app.git
 2.Navigate to the project directory:cd job-app 
 3.Install dependencies:npm install
 4.Start the development server:npm start
